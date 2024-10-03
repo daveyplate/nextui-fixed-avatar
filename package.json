@@ -1,7 +1,7 @@
 {
   "name": "@daveyplate/nextui-fixed-avatar",
   "homepage": "https://github.com/daveyplate/nextui-fixed-avatar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Fixes flashing on NextUI avatars that are already cached",
   "module": "dist/index",
   "types": "dist/index",
