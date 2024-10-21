@@ -7,7 +7,8 @@ import { cn } from "@nextui-org/theme"
  * @type {React.ForwardRefExoticComponent<React.PropsWithoutRef<import("@nextui-org/avatar").AvatarProps> & React.RefAttributes<HTMLElement>>}
  */
 export const Avatar = forwardRef(({ name, src, size = "md", className, ...props }, ref) => {
-    const image = useRef(new Image())
+    const isHydrated = useIsHydrated()
+    const image = useRef(isHydrated ? new Image() : null)
     const [showFallback, setShowFallback] = useState(false)
 
     if (image.current) {
@@ -26,7 +27,7 @@ export const Avatar = forwardRef(({ name, src, size = "md", className, ...props 
             textSize = 'text-base'
     }
 
-    const ignoreFallback = image.current.complete && image.current.naturalWidth > 0
+    const ignoreFallback = image.current?.complete && image.current?.naturalWidth > 0
 
     return (
         <NextUIAvatar
@@ -45,3 +46,15 @@ export const Avatar = forwardRef(({ name, src, size = "md", className, ...props 
         />
     )
 })
+
+function subscribe() {
+    return () => { }
+}
+
+function useIsHydrated() {
+    return React.useSyncExternalStore(
+        subscribe,
+        () => true,
+        () => false
+    )
+}
