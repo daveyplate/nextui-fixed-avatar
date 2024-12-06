@@ -1,7 +1,7 @@
 {
   "name": "@daveyplate/nextui-fixed-avatar",
   "homepage": "https://github.com/daveyplate/nextui-fixed-avatar",
-  "version": "1.0.5",
+  "version": "1.0.4",
   "description": "Fixes flashing on NextUI avatars that are already cached",
   "module": "dist/index",
   "types": "dist/index",
@@ -33,7 +33,7 @@
   "peerDependencies": {
     "react": ">=18.3.1",
     "react-dom": ">=18.3.1",
-    "@nextui-org/react": ">=2.4.0",
+    "@nextui-org/avatar": ">=2.0.33",
     "framer-motion": ">=11.9.0"
   }
 }

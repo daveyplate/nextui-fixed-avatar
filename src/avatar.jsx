@@ -1,5 +1,5 @@
 import React, { forwardRef, useRef, useState } from "react"
-import { Avatar as NextUIAvatar } from "@nextui-org/react"
+import { Avatar as NextUIAvatar } from "@nextui-org/avatar"
 
 /**
  * Fixed NextUI Avatar
