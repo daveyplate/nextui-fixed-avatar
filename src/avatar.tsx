@@ -1,16 +1,12 @@
 import React, { forwardRef, useRef, useState } from "react"
-import { Avatar as NextUIAvatar } from "@nextui-org/avatar"
+import { AvatarProps, Avatar as NextUIAvatar } from "@nextui-org/avatar"
 
-/**
- * Fixed NextUI Avatar
- * @type {React.ForwardRefExoticComponent<React.PropsWithoutRef<import("@nextui-org/avatar").AvatarProps> & React.RefAttributes<HTMLElement>>}
- */
-export const Avatar = forwardRef(({ src, ...props }, ref) => {
+export const Avatar = forwardRef(({ src, ...props }: AvatarProps, ref: React.Ref<HTMLElement>) => {
     const isHydrated = useIsHydrated()
     const image = useRef(isHydrated ? new Image() : null)
     const [showFallback, setShowFallback] = useState(false)
 
-    if (image.current) {
+    if (image.current && src) {
         image.current.src = src
     }
 
