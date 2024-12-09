@@ -5,6 +5,10 @@
   "description": "Fixes flashing on NextUI avatars that are already cached",
   "module": "dist/index",
   "types": "dist/index",
+  "files": [
+    "src",
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
